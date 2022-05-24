@@ -1,0 +1,9 @@
+{
+    "userName": "Roan",
+    "clientIp": "86.2.10.33",
+    "totalScore": "8",
+    "questions": {
+        "item01": "Pizzas",
+        "item02": "Action"
+    }
+}
