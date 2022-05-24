@@ -2,11 +2,11 @@
 $page = $_SERVER['SCRIPT_NAME'];
 
 if ($page == "/") {
-    require("public/index.blade.php");
+    echo require("public/index.blade.php");
 }
 if ($page == "/createquiz") {
-    require("public/createquiz.blade.php");
+    echo require("public/createquiz.blade.php");
 }
 if ($page == "/quiz") {
-    require("public/viewquiz.blade.php");
+    echo require("public/viewquiz.blade.php");
 }
