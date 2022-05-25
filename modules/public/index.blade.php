@@ -17,7 +17,7 @@
     <meta property="og:image" content="modules/public/resources/img/text-logo-white.png">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
@@ -27,19 +27,12 @@
 <body>
     <!--Main Navigation-->
     <header>
-        <!-- Intro settings -->
-        <style>
-            #intro {
-                /* Margin to fix overlapping fixed navbar */
-                margin-top: 100px;
-            }
-        </style>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white absoloute-top">
             <div class="container-fluid">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+                <a class="navbar-brand" href="./">
                     <img src="modules/public/resources/img/text-logo.png" height="48" alt="%[site_name]%" loading="lazy" style="margin-top: -3px;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +83,7 @@
                     <!-- Password input -->
                     <label class="form-label" for="dropdown">Enter your Name: </label>
                     <div class="form-outline mb-4">
-                        <input type="text" id="name" class="form-control" name="name" placeholder="Alex"/>
+                        <input type="text" id="name" class="form-control" name="name"/>
                         <label class="form-label" for="name">Your Name</label>
                     </div>
 

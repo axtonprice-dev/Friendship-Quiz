@@ -1,6 +1,7 @@
 <?php
 /* Variables and Functions */
 $page = $_SERVER['REQUEST_URI'];
+if(strpos($page, "?")) $page = substr($page, 0, strpos($page, "?"));
 function render($path, $config, $vars)
 {
     $file = file_get_contents("modules/$path"); // Get file data
@@ -19,7 +20,10 @@ if ($page == "/") {
 } else if ($page == "/takequiz") {
     render("public/takequiz.blade.php", $config, $variables);
 
-} else {
+} else if ($page == "/500") {
+    render("public/500.aspx", $config, $variables);
+
+}  else {
     render("public/404.aspx", $config, $variables);
 
 }

@@ -17,33 +17,27 @@
     <meta property="og:image" content="modules/public/resources/img/text-logo-white.png">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
-    <!-- Location Dropdown -->
-    <link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
-    <script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
-    <script src="modules/public/resources/js/formdata/countries.js"></script>
+    <!-- Custom Script -->
+    <script>
+        const urlId = `([urldata_id])`; // Assign id variable from URL
+        var questionCounter = 1; // Set questions counter to 1
+    </script>
 </head>
 
 <body>
     <!--Main Navigation-->
     <header>
-        <!-- Intro settings -->
-        <style>
-            #intro {
-                /* Margin to fix overlapping fixed navbar */
-                margin-top: 100px;
-            }
-        </style>
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white absoloute-top">
             <div class="container-fluid">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+                <a class="navbar-brand" target="_blank" href="./">
                     <img src="modules/public/resources/img/text-logo.png" height="48" alt="%[site_name]%" loading="lazy" style="margin-top: -3px;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,49 +59,110 @@
     </header>
     <!--Main Navigation-->
 
-    <!--Main layout-->
-    <main class="my-5">
-        <div class="container">
-            <!--Section: Content-->
-            <section>
-                <!-- Jumbotron -->
-                <div id="intro" class="p-5 text-center bg-light shadow-5 rounded mb-5">
-                    <h1 class="mb-3 h2">%[site_name_long]%</h1>
-                    <p class="mb-3">%[site_title]%</p>
-                    <a class="btn btn-primary m-2" href="#createquiz">Create Your Quiz</a>
+    <!-- Modal -->
+    <div class="modal fade" id="maxQuestionsModal" tabindex="-1" aria-labelledby="maxQuestionsModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="maxQuestionsModalLabel">Max Questions Reached</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!-- Jumbotron -->
-            </section>
-            <!--Section: Content-->
+                <div class="modal-body">Yowzer! You've reached the question limit!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-    </main>
-    <!--Main layout-->
+    </div>
 
     <main class="my-5">
         <div class="container">
             <!--Section: Content-->
-            <section class="row d-flex justify-content-center">
-                <div class="p-3 text-center rounded">
-                    <h2 class="mb-3 h3">Create new Quiz</h2>
-                </div>
-                <!-- Jumbotron -->
-                <form class="col-6" id="createquiz" action="createquiz">
-                    <!-- Password input -->
-                    <label class="form-label" for="dropdown">Enter your Name: </label>
-                    <div class="form-outline mb-4">
-                        <input type="text" id="name" class="form-control" name="name" placeholder="Alex"/>
-                        <label class="form-label" for="name">Your Name</label>
+            <section class="text-center text-md-start">
+                <h4 class="mb-5">
+                    <dat id="username"></dat>'s Friendship Quiz
+                </h4>
+
+                <div class="row">
+                    <div class="col-3">
+                        <!-- Tab navs -->
+                        <div class="nav flex-column nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-1-tab" data-mdb-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Question 1</a>
+                        </div>
+
+                        <div class="nav flex-column nav-pills text-center" id="newQuestionButton" role="tablist" aria-orientation="vertical">
+                            <button type="button" class="nav-link" aria-controls="pill-new" aria-selected="false" onclick="newQuestionTab();">
+                                New Question
+                            </button>
+                        </div>
+                        <!-- Tab navs -->
                     </div>
 
-                    <!-- Submit button -->
+                    <style>
+                        .no-outline:focus {
+                            outline: none;
+                            border: none;
+                        }
+
+                        .no-outline {
+                            outline: none;
+                            border: none;
+                        }
+                    </style>
+
+                    <!--Grid row-->
                     <div class="row d-flex justify-content-center">
                         <!--Grid column-->
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-secondary btn-block">Create Quiz</button>
+
+
+                            <div class="col-9 pl-6">
+                                <!-- Tab content -->
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+
+                                        <div class="row">
+                                            <div class="col-md-8 mb-4">
+                                                <h2><i class="fa-solid fa-pencil"></i> <input type="text" class="no-outline field left" value="What is 's favorite food?"></input></h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 mb-4 p-1">
+                                            <form>
+                                                <!-- Default radio -->
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        <input type="password" id="v-pills-1-input-1" class="form-control" />
+                                                    </label>
+                                                </div>
+
+                                                <!-- Default checked radio -->
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        <input type="password" id="v-pills-1-input-2" class="form-control" />
+                                                    </label>
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- Tab content -->
+                            </div>
                         </div>
+
+            
                     </div>
-                </form>
-                <!-- Jumbotron -->
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+
             </section>
             <!--Section: Content-->
         </div>
@@ -117,13 +172,16 @@
     <footer class="text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3">
-        Copyright <a href="https://github.com/axtonprice">axtonprice</a> © %[site_name]% - ([date_year])
+            Copyright <a href="https://github.com/axtonprice">axtonprice</a> © %[site_name]% - ([date_year])
         </div>
         <!-- Copyright -->
     </footer>
     <!--Footer-->
+
     <!-- MDB -->
     <script type="text/javascript" src="modules/public/resources/js/mdb.min.js"></script>
+    <!-- Custom Script -->
+    <script type="text/javascript" src="modules/public/resources/js/quizFormCreator.js"></script>
 </body>
 
 </html>
