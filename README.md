@@ -1,8 +1,7 @@
 <h1 align="center">Friendship Quiz Creator 👋</h1>
 
 <p align="center">
-  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/axtonprice-dev/Friends-Quiz?label=Version">
-  <a href="https://github.com/axtonprice/quickblaze-encrypt/blob/main/LICENSE" target="_blank">
+  <a href="https://github.com/axtonprice-dev/Friends-Quiz/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <img alt="License: Total Lines" src="https://img.shields.io/tokei/lines/github/axtonprice-dev/Friends-Quiz?label=Total%20lines" />
