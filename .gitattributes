@@ -1,7 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
-*.html linguist-language=HTML
-*.php linguist-language=PHP
-*.scss linguist-language=PHP
-./* linguist-documentation # apply to all files and folders
