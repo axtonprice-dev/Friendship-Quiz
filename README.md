@@ -1,10 +1,10 @@
 <h1 align="center">Friendship Quiz Creator 👋</h1>
 
 <p align="center">
-  <a href="https://github.com/axtonprice-dev/Friends-Quiz/blob/main/LICENSE" target="_blank">
+  <a href="https://github.com/axtonprice-dev/Friendship-Quiz/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <img alt="License: Total Lines" src="https://img.shields.io/tokei/lines/github/axtonprice-dev/Friends-Quiz?label=Total%20lines" />
+  <img alt="License: Total Lines" src="https://img.shields.io/tokei/lines/github/axtonprice-dev/Friendship-Quiz?label=Total%20lines" />
   <a href="https://axtonprice.com?discord" target="_blank">
     <img alt="Discord: axtonprice" src="https://discord.com/api/guilds/826239258590969897/widget.png?style=shield" />
   </a>
@@ -24,9 +24,9 @@
 
 ## Installation
 
-1. Download the latest version from the <a href="https://github.com/axtonprice-dev/Friends-Quiz/releases">releases page</a>. 
+1. Download the latest version from the <a href="https://github.com/axtonprice-dev/Friendship-Quiz/releases">releases page</a>. 
 2. Upload and extract the file to your web server. 
-3. Visit your domain installation directory or subdomain https://example.com/Friends-Quiz/
+3. Visit your domain installation directory or subdomain https://example.com/Friendship-Quiz/
 4. **Enjoy!**
 
 ⚠️ *Don't delete the `.version` file! It contains necessary version data, and modifying it may cause issues!*
@@ -50,7 +50,7 @@ If you like this project, give a ⭐️ to support us!
 ## 📝 License
 
 Copyright © 2022 [axtonprice](https://github.com/axtonprice).<br />
-This project is [MIT](https://github.com/axtonprice-dev/Friends-Quiz/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/axtonprice-dev/Friendship-Quiz/blob/main/LICENSE) licensed.
 
 <hr>
 
