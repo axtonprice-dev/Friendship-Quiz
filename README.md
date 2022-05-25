@@ -12,7 +12,7 @@
 
 > Create quizzes to see how well your friends really know you!
 
-### ✨ <a href="https://friendquiz.axtonprice.com" target="_blank">Click to view Demo</a>
+### ✨ <a href="https://friendship-quiz.axtonprice.com" target="_blank">Click to view Demo</a>
 
 ## Requirements
 
@@ -28,8 +28,6 @@
 2. Upload and extract the file to your web server. 
 3. Visit your domain installation directory or subdomain https://example.com/Friendship-Quiz/
 4. **Enjoy!**
-
-⚠️ *Don't delete the `.version` file! It contains necessary version data, and modifying it may cause issues!*
 
 ## How it Works
 
