@@ -1,5 +1,5 @@
-ErrorDocument 404 /404
-ErrorDocument 500 /500
+ErrorDocument 500 /modules/public/500.aspx
+ErrorDocument 404 /modules/public/404.aspx
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
