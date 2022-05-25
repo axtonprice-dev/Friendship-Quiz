@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>404 Error</title>
+    <title>500 Error</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -18,8 +18,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center">
-                    <span class="display-1 d-block" style="font-weight: 600">404</span>
-                    <div class="mb-4 lead">The page you are looking for was not found.</div>
+                    <span class="display-1 d-block" style="font-weight: 600">500</span>
+                    <div class="mb-4 lead">An internal server error occurred.</div>
                     <a href="./" class="btn btn-link">Back to Home</a>
                 </div>
             </div>
