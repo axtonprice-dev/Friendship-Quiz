@@ -19,7 +19,7 @@ async function dataFunc() {
 }
 dataFunc();
 
-function saveState(){
+function saveState() {
     // const saveDataRequest = await fetch(`modules/backend/data_endpoint.php?data=saveJson&dataload=${encodeURIComponent()}`)
     // var responsedata = await saveDataRequest.json();
     console.log(`Auto-saved Quiz!`);
@@ -54,8 +54,42 @@ async function newQuestionTab() {
         document.getElementById("v-pills-tab").innerHTML +=
             `<a class="nav-link" id="v-pills-${questionCounter}-tab" data-mdb-toggle="pill" href="#v-pills-${questionCounter}" role="tab" aria-controls="v-pills-${questionCounter}" aria-selected="false">Question ${questionCounter}</a>`
 
+        const questions = await fetch(`modules/backend/data_endpoint.php?data=getJson&path=quiz-data/questions.json`)
+        var quizQuestion = await questions.json();
+        console.log(quizQuestion);
         document.getElementById("v-pills-tabContent").innerHTML +=
-            `<div class="tab-pane fade" id="v-pills-${questionCounter}" role="tabpanel" aria-labelledby="v-pills-${questionCounter}-tab">${questionCounter} content</div>`;
+            `<div class="tab-panel fade" id="v-pills-${questionCounter}" role="tabpanel" aria-labelledby="v-pills-${questionCounter}-tab">
+
+            <form>
+
+                <h4 class="mb-4 mt-2">
+                    <textarea class="no-outline" id="quizQuestion-${questionCounter}">${quizQuestion[0].title}</textarea>
+                </h4>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        <input type="text" id="v-pills-${questionCounter}-input-1" class="form-control" value="${quizQuestion[0].options.item1}" />
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <input type="text" id="v-pills-${questionCounter}-input-2" class="form-control" value="${quizQuestion[0].options.item2}" />
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        <input type="text" id="v-pills-${questionCounter}-input-3" class="form-control" value="${quizQuestion[0].options.item3}" />
+                    </label>
+                </div>
+
+            </form>
+
+        </div>`;
 
         saveState();
     }

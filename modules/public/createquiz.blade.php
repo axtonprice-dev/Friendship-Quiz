@@ -79,8 +79,8 @@
     <main class="my-5">
         <div class="container">
             <!--Section: Content-->
-            <section class="text-center text-md-start">
-                <h4 class="mb-5">
+            <section class="text-md-start">
+                <h4 class="mb-5 text-center">
                     <dat id="username"></dat>'s Friendship Quiz
                 </h4>
 
@@ -96,10 +96,20 @@
                                 New Question
                             </button>
                         </div>
+
+                        <div class="nav flex-column nav-pills text-center mt-4" id="submitButton" role="tablist" aria-orientation="vertical">
+                            <button type="button" class="nav-submit-btn nav-link" aria-controls="pill-new" aria-selected="false" onclick="submitForm();">
+                                <i class="fa-solid fa-check"></i> Finish Quiz
+                            </button>
+                        </div>
                         <!-- Tab navs -->
                     </div>
 
                     <style>
+                        .nav-submit-btn:hover {
+                            background-color: #7ac379
+                        }
+
                         .no-outline:focus {
                             outline: none;
                             border: none;
@@ -109,60 +119,48 @@
                             outline: none;
                             border: none;
                         }
+
+                        input {
+                            height: 45px;
+                            width: 300px;
+                        }
+
+                        .tab-content {
+                            width: 400px;
+                        }
                     </style>
 
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        <!--Grid column-->
-                        <div class="col-md-6">
+                    <div class="col-9">
+                        <!-- Tab content -->
+                        <div class="tab-content" id="v-pills-tabContent">
 
+                            <div class="tab-panel fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                                <form>
+                                    <h4 class="mt-2">
+                                        <textarea class="no-outline" id="quizQuestion-1">What is username's favorite food?</textarea>
+                                    </h4>
 
-                            <div class="col-9 pl-6">
-                                <!-- Tab content -->
-                                <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-
-                                        <div class="row">
-                                            <div class="col-md-8 mb-4">
-                                                <h2><i class="fa-solid fa-pencil"></i> <input type="text" class="no-outline field left" value="What is 's favorite food?"></input></h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 mb-4 p-1">
-                                            <form>
-                                                <!-- Default radio -->
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        <input type="password" id="v-pills-1-input-1" class="form-control" />
-                                                    </label>
-                                                </div>
-
-                                                <!-- Default checked radio -->
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        <input type="password" id="v-pills-1-input-2" class="form-control" />
-                                                    </label>
-                                                </div>
-                                            </form>
-
-                                        </div>
-
-
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            <input type="text" id="v-pills-1-input-1" class="form-control" />
+                                        </label>
                                     </div>
-                                </div>
-                                <!-- Tab content -->
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            <input type="text" id="v-pills-1-input-2" class="form-control" />
+                                        </label>
+                                    </div>
+                                </form>
                             </div>
+
                         </div>
-
-            
+                        <!-- Tab content -->
                     </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
 
+                </div>
             </section>
             <!--Section: Content-->
         </div>

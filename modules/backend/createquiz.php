@@ -35,7 +35,7 @@ function setupFileData($id)
     file_put_contents("../../local-storage/quiz-" . $id . "/quiz-data/creation.json", $creation);
 }
 
-setcookie("quizId", $id, time() + 3600);  /* expire in 1 hour */
+setcookie("quizId", $id, mktime (0, 0, 0, 12, 31, 2030));  /* expire in 1 hour */
 setupDirectory($id);
 setupFileData($id);
 header("Location: ../../createquiz");
