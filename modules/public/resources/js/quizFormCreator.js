@@ -4,25 +4,53 @@ async function dataFunc() {
         var quizdata = await creation.json();
         const questions = await fetch(`modules/backend/data_endpoint.php?data=getJson&path=quiz-data/questions.json`)
         var responsedata = await questions.json();
-
         const username = quizdata.user_name;
 
         document.getElementById("username").innerHTML = username;
-        document.getElementById("username").innerHTML = username;
-        console.log(creation);
-        console.log(responsedata);
+        document.getElementById("v-pills-tabContent").innerHTML =
+            `<div class="tab-pane fade active show" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                <form>
+                    <h4 class="mt-2">
+                        <textarea class="no-outline" id="quizQuestion-1">${responsedata[0].title}</textarea>
+                    </h4>
+                    <div id="question-inputs-q1"></div>
+                </form>
+            </div>`;
+        Object.entries(responsedata[0].options).forEach(([key, value]) => {
+            // console.log(`${key} ${value}`); // item1 Tacos
+            if (responsedata[0].answerkey === key) {
+                document.getElementById("question-inputs-q1").innerHTML +=
+                    `<div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            <input type="text" id="v-pills-1-input-1" class="form-control" value="${value}" />
+                        </label>
+                    </div>`;
+            } else {
+                document.getElementById("question-inputs-q1").innerHTML +=
+                    `<div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            <input type="text" id="v-pills-1-input-1" class="form-control" value="${value}" />
+                        </label>
+                    </div>`;
+            }
+
+        });
 
     } catch (err) {
-        window.location.replace("../../500");
+        // window.location.replace("../../500");
+        console.log(err);
         return;
     }
 }
 dataFunc();
 
 function saveState() {
-    // const saveDataRequest = await fetch(`modules/backend/data_endpoint.php?data=saveJson&dataload=${encodeURIComponent()}`)
+    // var values = `${}`;
+    // const saveDataRequest = await fetch(`modules/backend/data_endpoint.php?data=saveJson&dataload=${encodeURIComponent(values)}`)
     // var responsedata = await saveDataRequest.json();
-    console.log(`Auto-saved Quiz!`);
+    console.log(`✅ Auto-saved Quiz!`);
 }
 
 async function newQuestionTab() {
@@ -45,54 +73,49 @@ async function newQuestionTab() {
     }
 
     if (questionCounter >= 11) {
-        document.getElementById("newQuestionButton").innerHTML = `
-            <a type="button" class="nav-link" style="background-color: #c25864; color:white" aria-selected="false" data-mdb-toggle="modal" data-mdb-target="#maxQuestionsModal">
-                Max Questions!
-            </a>`;
+        document.getElementById("newQuestionButton").innerHTML = `<a type="button" class="nav-link" style="background-color: #c25864; color:white" aria-selected="false" data-mdb-toggle="modal" data-mdb-target="#maxQuestionsModal">Max Questions!</a>`;
         saveState();
     } else {
-        document.getElementById("v-pills-tab").innerHTML +=
-            `<a class="nav-link" id="v-pills-${questionCounter}-tab" data-mdb-toggle="pill" href="#v-pills-${questionCounter}" role="tab" aria-controls="v-pills-${questionCounter}" aria-selected="false">Question ${questionCounter}</a>`
-
+        document.getElementById("v-pills-tab").innerHTML += `<a class="nav-link" id="v-pills-${questionCounter}-tab" data-mdb-toggle="pill" href="#v-pills-${questionCounter}" role="tab" aria-controls="v-pills-${questionCounter}" aria-selected="false">Question ${questionCounter}</a>`;
         const questions = await fetch(`modules/backend/data_endpoint.php?data=getJson&path=quiz-data/questions.json`)
-        var quizQuestion = await questions.json();
-        console.log(quizQuestion);
+        var quizQuestionData = await questions.json();
+        var indexCounter = questionCounter - 1;
+        // console.log(quizQuestionData);
+        // console.log(quizQuestionData[indexCounter].options.item1);
+        // console.log(quizQuestionData[indexCounter].title);
         document.getElementById("v-pills-tabContent").innerHTML +=
-            `<div class="tab-panel fade" id="v-pills-${questionCounter}" role="tabpanel" aria-labelledby="v-pills-${questionCounter}-tab">
+            `<div class="tab-pane fade" id="v-pills-${questionCounter}" role="tabpanel" aria-labelledby="v-pills-${questionCounter}-tab">
+                <form>
+                    <h4 class="mt-2">
+                        <textarea class="no-outline" id="quizQuestion-${questionCounter}">${quizQuestionData[indexCounter].title}</textarea>
+                    </h4>
+                    <div id="question-inputs-q${questionCounter}"></div>
+                </form>
+            </div>`;
 
-            <form>
+        Object.entries(quizQuestionData[indexCounter].options).forEach(([key, value]) => {
+            // console.log(`${key} ${value}`); // item1 Tacos
+            if (quizQuestionData[indexCounter].answerkey === key) {
+                document.getElementById(`question-inputs-q${questionCounter}`).innerHTML +=
+                    `<div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <input type="text" id="v-pills-1-input-1" class="form-control" value="${value}" />
+                            </label>
+                        </div>`;
+            } else {
+                document.getElementById(`question-inputs-q${questionCounter}`).innerHTML +=
+                    `<div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <input type="text" id="v-pills-1-input-1" class="form-control" value="${value}" />
+                            </label>
+                        </div>`;
+            }
 
-                <h4 class="mb-4 mt-2">
-                    <textarea class="no-outline" id="quizQuestion-${questionCounter}">${quizQuestion[0].title}</textarea>
-                </h4>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        <input type="text" id="v-pills-${questionCounter}-input-1" class="form-control" value="${quizQuestion[0].options.item1}" />
-                    </label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        <input type="text" id="v-pills-${questionCounter}-input-2" class="form-control" value="${quizQuestion[0].options.item2}" />
-                    </label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
-                    <label class="form-check-label" for="flexRadioDefault3">
-                        <input type="text" id="v-pills-${questionCounter}-input-3" class="form-control" value="${quizQuestion[0].options.item3}" />
-                    </label>
-                </div>
-
-            </form>
-
-        </div>`;
+        });
 
         saveState();
     }
 
 }
-
