@@ -6,7 +6,7 @@ $config = array(
     "site_name" => "Friendship Quiz",
     "site_name_long" => "The Friendship Quiz",
     "site_desc" => "❓ How well do your friends really know you? Create your own quiz to find out!",
-    "site_title" => "⭐ Create a customized quiz to find out how well your friends know you!",
+    "site_title" => "⭐ Create a customized quiz to test how well your friends know you!",
 );
 $variables = array(
     "date_year" => date("Y"),
@@ -17,5 +17,4 @@ $variables = array(
 
 /* Initialise Application */
 require("modules/main.php");
-
 ?>

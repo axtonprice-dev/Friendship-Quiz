@@ -1,0 +1,22 @@
+.nav-submit-btn:hover {
+    background-color: #7ac379
+}
+
+.no-outline:focus {
+    outline: none;
+    border: none;
+}
+
+.no-outline {
+    outline: none;
+    border: none;
+}
+
+input {
+    height: 45px;
+    width: 300px;
+}
+
+.tab-content {
+    width: 400px;
+}

@@ -23,13 +23,15 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
     <!-- Custom Script -->
+    <link href="modules/public/resources/css/custom.style.css" rel="stylesheet" />
+</head>
+
+<body>
     <script>
         const urlId = `([urldata_id])`; // Assign id variable from URL
         var questionCounter = 1; // Set questions counter to 1
     </script>
-</head>
 
-<body>
     <!--Main Navigation-->
     <header>
 
@@ -37,7 +39,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white absoloute-top">
             <div class="container-fluid">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" target="_blank" href="./">
+                <a class="navbar-brand" href="./">
                     <img src="modules/public/resources/img/text-logo.png" height="48" alt="%[site_name]%" loading="lazy" style="margin-top: -3px;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,58 +107,9 @@
                         <!-- Tab navs -->
                     </div>
 
-                    <style>
-                        .nav-submit-btn:hover {
-                            background-color: #7ac379
-                        }
-
-                        .no-outline:focus {
-                            outline: none;
-                            border: none;
-                        }
-
-                        .no-outline {
-                            outline: none;
-                            border: none;
-                        }
-
-                        input {
-                            height: 45px;
-                            width: 300px;
-                        }
-
-                        .tab-content {
-                            width: 400px;
-                        }
-                    </style>
-
                     <div class="col-9">
                         <!-- Tab content -->
-                        <div class="tab-content" id="v-pills-tabContent">
-
-                            <div class="tab-panel fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                                <form>
-                                    <h4 class="mt-2">
-                                        <textarea class="no-outline" id="quizQuestion-1">What is username's favorite food?</textarea>
-                                    </h4>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <input type="text" id="v-pills-1-input-1" class="form-control" />
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            <input type="text" id="v-pills-1-input-2" class="form-control" />
-                                        </label>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
+                        <div class="tab-content" id="v-pills-tabContent"></div>
                         <!-- Tab content -->
                     </div>
 

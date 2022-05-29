@@ -1,16 +1,14 @@
 <h1 align="center">Friendship Quiz Creator 👋</h1>
 
 <p align="center">
-  <a href="https://github.com/axtonprice-dev/Friendship-Quiz/blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <img alt="License: Total Lines" src="https://img.shields.io/tokei/lines/github/axtonprice-dev/Friendship-Quiz?label=Total%20lines" />
+  <img alt="Latest Release" src="https://img.shields.io/github/v/tag/axtonprice-dev/friendship-quiz?include_prereleases&label=latest%20release&sort=semver" />
+  <img alt="Project Size" src="https://img.shields.io/github/languages/code-size/axtonprice-dev/friendship-quiz?label=download%20size" />
   <a href="https://axtonprice.com?discord" target="_blank">
-    <img alt="Discord: axtonprice" src="https://discord.com/api/guilds/826239258590969897/widget.png?style=shield" />
+    <img alt="Discord" src="https://discord.com/api/guilds/826239258590969897/widget.png?style=shield" />
   </a>
 </p>
 
-> Create quizzes to see how well your friends really know you!
+> Create customized quizzes to test how well your friends really know you!
 
 ### ✨ <a href="https://friendship-quiz.axtonprice.com" target="_blank">Click to view Demo</a>
 
@@ -25,13 +23,13 @@
 ## Installation
 
 1. Download the latest version from the <a href="https://github.com/axtonprice-dev/Friendship-Quiz/releases">releases page</a>. 
-2. Upload and extract the file to your web server. 
-3. Visit your domain installation directory or subdomain https://example.com/Friendship-Quiz/
+2. Upload and extract the file to your PHP web server. 
+3. Visit your domain installation directory or subdomain: https://example.com/Friendship-Quiz/
 4. **Enjoy!**
 
 ## How it Works
 
-Users will enter their name, which will direct them to a quiz editor page. Once the user has created each question for their quiz, a directory is created with the quiz data including quiz information and question data. The user can share the quiz link anywhere, where responses will be added to the quizzes allocated directory.
+Users will enter their name, which will direct them to a quiz editor page. Once the user has created each question for their quiz, a (private) directory is created (located in `local-storage/`) with the quiz data including quiz information and question data. The user can share the quiz link with other people, and responses will be added to the quiz's allocated questions directory. A quiz directory 
   
 ## Authors and Contributors
 
