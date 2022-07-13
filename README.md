@@ -1,4 +1,4 @@
-<h1 align="center">Friendship Quiz Creator 👋</h1>
+<h1 align="center">(UNRELEASED) Friendship Quiz Creator 👋</h1>
 
 <p align="center">
   <img alt="Latest Release" src="https://img.shields.io/github/v/tag/axtonprice-dev/friendship-quiz?include_prereleases&label=latest%20release&sort=semver" />
